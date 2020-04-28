@@ -29,6 +29,8 @@ def appointments
     Appointment.all.select{|appointment| appointment.patient == self}
 end
 
+#iterates over that patient's appointments and collects the doctor 
+#that belongs to each appointment
 def doctors
     appointments.map{|appointment|appointment.doctor}.uniq
 end  

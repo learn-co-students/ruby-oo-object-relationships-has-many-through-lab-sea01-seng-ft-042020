@@ -18,8 +18,7 @@ class Doctor
         @@all 
     end
 
-    #needs an instance 
-    #method, #new_appointment, that takes in a 
+    #takes in 
     #an instance of the Patient class and a date,
     #and creates a new Appointment. That Appointment 
     #should know that it belongs to the doctor 
@@ -33,13 +32,12 @@ class Doctor
         Appointment.all.select{|appointments| appointments.doctor == self}
     end
 
+    #iterates over doctor's appointments and collects those belonging
+    #to each appointments
     def patients
        appointments.map{|appointment| appointment.patient}.uniq
     end
 
 end
-
-denka = Doctor.new("Samuel Denka")
-braun = Doctor.new("Ted Braun")
 
 #binding.pry
